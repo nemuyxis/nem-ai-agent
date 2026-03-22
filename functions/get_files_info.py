@@ -15,9 +15,9 @@ def get_files_info(working_directory, directory="."):
                 size = os.path.getsize(target_dir + "/" + dir)
                 is_dir = os.path.isdir(target_dir + "/" + dir)
                 str_dirs += f"  - {name}: file_size={size}, is_dir={is_dir}\n"
-            print(str_dirs)
+            return str_dirs
         else:
-            print(f'Result for {directory} directory:\n     Error: Cannot list "{directory}" as it is outside the permitted working directory')
+            return f'Result for {directory} directory:\n     Error: Cannot list "{directory}" as it is outside the permitted working directory'
     else:
-        print(f'Error: "{directory}" is not a directory')
+        return f'Error: "{directory}" is not a directory'
     
